@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list .item
+{
+    transition: .5s;
+    filter: brightness(0);
+
+}
+.list .item:hover{
+    filter: brightness(1);
+
+}
+.list {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.list .item:hover{
+    filter: brightness(1);
+    transform: translateZ(200px);
+
+}
+.list .item:hover + *{
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(40deg);
+}
+.list .item:hover + * + *{
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(20deg);
+}
+.list .item:hover + * + * + * {
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(10deg);
+}
+.list .item:has(+ *:hover){
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(-40deg);
+}
+.list .item:has(+ * + *:hover){
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(-20deg);
+}
+.list .item:has(+ * + * + *:hover){
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(-10deg);
+}
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="list">
+            <div class="item"><img src="1.jpg"></div>
+            <div class="item"><img src="2.jpg"></div>
+            <div class="item"><img src="3.jpg"></div>
+            <div class="item"><img src="4.jpg"></div>
+            <div class="item"><img src="5.jpg"></div>
+            <div class="item"><img src="6.jpg"></div>
+            <div class="item"><img src="7.jpg"></div>
+            <div class="item"><img src="8.jpg"></div>
+            <div class="item"><img src="9.jpg"></div>
+            <div class="item"><img src="10.jpg"></div>
+        </div>
+    </main>
+</body>
+</html>
